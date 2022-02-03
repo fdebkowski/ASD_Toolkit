@@ -1,12 +1,4 @@
-# Python program for implementation of Selection Sort
-from typing import List, TypeVar
-
-# Declare generic type for the sort function input
-T = TypeVar("T")
-
-
-# Function to do selection sort
-def selection_sort(arr: List[T]) -> None:
+def selection_sort(arr):
     swaps = 0
     comps = 0
     # Traverse through all array elements
@@ -30,6 +22,6 @@ def selection_sort(arr: List[T]) -> None:
 
 # Driver code to test above
 if __name__ == "__main__":
-    a = [4,15,8,13,10,11,2,1]
-    selection_sort(a)
-    print("Sorted array", a)
+    arr = [5,4,3,2,1]
+    selection_sort(arr)
+    print("Sorted array", arr)
