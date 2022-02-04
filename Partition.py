@@ -3,16 +3,20 @@ def partition(arr):
     r = 0
     n = len(arr)
     tmp = 0
+    swaps = 0
+    comps = 0
 
     while r < n-1:
+        comps += 1
         if arr[r] < arr[n-1]:
             if r > l+1:
                 tmp = arr[l+1]
                 arr[l+1] = arr[r]
                 arr[r] = tmp
+                swaps += 1
+                print('l = {}   r = {}  swaps = {}  comps = {}'.format(l+1,r+1,swaps,comps))
             l += 1
         r += 1
-
     if l+1 < n-1:
         tmp = arr[l+1]
         arr[l+1] = arr[n-1]
@@ -23,7 +27,7 @@ def partition(arr):
 
 
 def hoare_partition(arr, k):
-    print('k = {}   Arr = {}'.format(k, arr))
+    print('Hoare exec ! k = {}   Arr = {}'.format(k, arr))
     m = 0
     tmp = 0
     n = len(arr)
@@ -42,7 +46,7 @@ def hoare_partition(arr, k):
     return tmp
 
 
-def quick_sort_partiion(arr):
+def quick_sort_partition(arr):
     print('QuickSort Executed')
     print(arr)
     m = 0
@@ -51,11 +55,14 @@ def quick_sort_partiion(arr):
     m = partition(arr)
 
     if m > 1:
-        quick_sort_partiion(arr[:m])
+        quick_sort_partition(arr[:m])
     if (n-m-1) > 1:
-        quick_sort_partiion(arr[m+1:])
+        quick_sort_partition(arr[m+1:])
 
 
 if __name__ == '__main__':
-    arr = [6,3,8,7,19,17,16,18,14]
-    hoare_partition(arr, 9)
+    arr = [8,2,10,19,12,11,14,18,6]
+    k = 9
+    # partition(arr)
+    hoare_partition(arr, k)
+    # quick_sort_partition(arr)

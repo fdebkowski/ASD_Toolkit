@@ -22,6 +22,6 @@ def selection_sort(arr):
 
 # Driver code to test above
 if __name__ == "__main__":
-    arr = [5,4,3,2,1]
+    arr = [10,15,17,13,16,0,9,11]
     selection_sort(arr)
     print("Sorted array", arr)

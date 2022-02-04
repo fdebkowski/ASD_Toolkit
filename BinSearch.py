@@ -12,8 +12,8 @@ def bin_search(arr, x):
             r = m-1
         comps +=1
         m = int((l+r)/2)
+        print('m = {}'.format(m))
     
-    print(m)
     print('Comps = {}'.format(comps-1))
     
 if __name__ == '__main__':

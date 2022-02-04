@@ -1,7 +1,7 @@
 def my_split(arr):
 
     l = 1
-    r = arr.length - 1
+    r = len(arr) - 1
     tmp = 0
 
     while (l <= r):
@@ -24,8 +24,8 @@ def my_split(arr):
         arr[r] = tmp
 
     print(arr)
-    print("r = " + r)
-    print("val r = " + arr[r])
+    print("r = " + str(r))
+    print("val r = " + str(arr[r]))
     return(r)
 
 def hoare_split(arr ,k):
@@ -60,6 +60,6 @@ def quick_sort_split(arr):
         quick_sort_split(arr[m+1:])
     
 if __name__ == '__main__':
-    arr = [0,1,2,3]
+    arr = [6,8,5,7,4]
     print('Array:', arr)
     my_split(arr)

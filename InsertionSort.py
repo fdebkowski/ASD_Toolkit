@@ -24,6 +24,6 @@ def insertion_sort(arr):
         
 # Driver code to test above
 if __name__ == '__main__':
-    nums = [5,4,3,2,1]
+    nums = [19,17,18,16,5,15,14,11]
     insertion_sort(nums)
     print(nums)
