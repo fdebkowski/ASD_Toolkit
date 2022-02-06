@@ -15,6 +15,7 @@ def partition(arr):
                 arr[r] = tmp
                 swaps += 1
                 print('l = {}   r = {}  swaps = {}  comps = {}'.format(l+1,r+1,swaps,comps))
+                print(arr)
             l += 1
         r += 1
     if l+1 < n-1:
@@ -61,8 +62,8 @@ def quick_sort_partition(arr):
 
 
 if __name__ == '__main__':
-    arr = [8,2,10,19,12,11,14,18,6]
+    arr = [19,13,14,10,2,1,12,18,8,3,7,11,9]
     k = 9
     # partition(arr)
-    hoare_partition(arr, k)
+    partition(arr)
     # quick_sort_partition(arr)

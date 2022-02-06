@@ -105,9 +105,9 @@ def deleteNode(root, key):
 
 def printInorder(root):
     if root:
-        printInorder(root.left)
-        print(root.key)
         printInorder(root.right)
+        print(root.key)
+        printInorder(root.left)
 
 
 def printPostorder(root):
@@ -125,13 +125,15 @@ def printPreorder(root):
 
 
 root = None
-arr = [0,4,1,2,3,6,5]
+
+arr = [5,3,9,4,10,6,7]
 for num in arr:
     root = insert(root, num)
-# r = deleteNode(r, 4)
-# r = deleteNode(r, 19)
-# r = deleteNode(r, 11)
-
+    
+arr_del = []
+for num in arr_del:
+    root = deleteNode(root, num)
+    
 print('Inorder')
 printInorder(root)
 print('Postorder')

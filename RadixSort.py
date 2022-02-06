@@ -3,7 +3,6 @@
 # A function to do counting sort of arr[] according to
 # the digit represented by exp.
 
-
 def counting_sort(arr, exp1):
     n = len(arr)
 
@@ -36,6 +35,7 @@ def counting_sort(arr, exp1):
     i = 0
     for i in range(0, len(arr)):
         arr[i] = output[i]
+    print(arr)
 
 
 # Method to do Radix Sort
@@ -47,7 +47,7 @@ def radix_sort(arr):
     # of passing digit number, exp is passed. exp is 10ⁱ
     # where i is current digit number
     exp = 1
-    while max1 / exp > 0:
+    while int(max1 / exp) > 0:
         counting_sort(arr, exp)
         exp *= 10
 

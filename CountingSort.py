@@ -1,44 +1,37 @@
-# Python program for counting sort
+# Counting sort in Python programming
 
-# The main function that sort the given string arr[] in
-# alphabetical order
+def countingSort(array):
+    size = len(array)
+    output = [0] * size
 
+    # Initialize count array
+    count = [0] * 10
 
-def count_sort(arr):
-    # The output character array that will have sorted arr
-    output = [0 for _ in range(256)]
+    # Store the count of each elements in count array
+    for i in range(0, size):
+        count[array[i]] += 1
+    print(count)
 
-    # Create a count array to store count of inidividul
-    # characters and initialize count array as 0
-    count = [0 for _ in range(256)]
-
-    # For storing the resulting answer since the
-    # string is immutable
-    ans = ['' for _ in arr]
-
-    # Store count of each character
-    for i in arr:
-        count[ord(i)] += 1
-
-    # Change count[i] so that count[i] now contains actual
-    # position of this character in output array
-    for i in range(256):
+    # Store the cummulative count
+    for i in range(1, 10):
         count[i] += count[i - 1]
+    print(count)
 
-    # Build the output character array
-    for i in range(len(arr)):
-        output[count[ord(arr[i])] - 1] = arr[i]
-        count[ord(arr[i])] -= 1
+    # Find the index of each element of the original array in count array
+    # place the elements in output array
+    i = size - 1
+    while i >= 0:
+        output[count[array[i]] - 1] = array[i]
+        count[array[i]] -= 1
+        i -= 1
+    print(count)
 
-    # Copy the output array to arr, so that arr now
-    # contains sorted characters
-    for i in range(len(arr)):
-        ans[i] = output[i]
-    return ans
+    # Copy the sorted elements into original array
+    for i in range(0, size):
+        array[i] = output[i]
 
 
-# Driver program to test above function
-if __name__ == '__main__':
-    arr = "mynameisdiptangsugoswami"
-    ans = count_sort(arr)
-    print(f'Sorted character array is: {"".join(ans)}')
+data = [0, 0, 5, 1, 1, 0, 0, 3, 5, 0, 0, 0]
+countingSort(data)
+print("Sorted Array in Ascending Order: ")
+print(data)

@@ -110,6 +110,7 @@ class AVLTree(object):
 
     # Function to perform right rotation
     def rightRotate(self, z):
+        print('right rotate')
         y = z.left
         T3 = y.right
         y.right = z
@@ -172,7 +173,7 @@ class AVLTree(object):
 
 myTree = AVLTree()
 root = None
-nums = [2,7,15,18,8,14,0,3,4,1]
+nums = [4,2,7,1,3,6,8,5,9]
 for num in nums:
     root = myTree.insert_node(root, num)
 myTree.printHelper(root, "", True)
